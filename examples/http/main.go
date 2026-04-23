@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/pmoura-dev/skeleton"
+	"github.com/pmoura-dev/skeleton/stdtasks"
 )
 
 type HTTPServerTask struct {
@@ -51,6 +52,7 @@ func main() {
 	})
 
 	app.Register("http-api", httpTask)
+	app.Register("http-internal", stdtasks.NewInternalHTTPTask(":8081"))
 
 	app.Run()
 }
