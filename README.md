@@ -18,8 +18,8 @@ It acts as a foundation for Go applications.
 func main() {
   app := skeleton.New(skeleton.Config{})
 
-  app.AddTask(httpServerTask)
-  app.AddTask(workerTask)
+  app.Register(httpServerTask)
+  app.Register(workerTask)
 
   if err := app.Run(); err != nil {
     os.Exit(1)
